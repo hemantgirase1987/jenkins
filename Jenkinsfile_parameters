@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        choice(name: Environment, choices['Dev','Stage','Perf','Preprod','Prod'])
-        booleanParam(name: executeTest, defaultValue: true, description: 'Check this to run the Test stage')
+        choice(name: 'Environment', choices: ['Dev','Stage','Perf','Preprod','Prod']. description: 'Select the environment')
+        booleanParam(name: 'executeTest', defaultValue: true, description: 'Check this to run the Test stage')
     }
         stages {
             stage ("Build") {
