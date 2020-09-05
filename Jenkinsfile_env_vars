@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    environment {
+        VERSION_NUM = "1.0.0"
+    }
+        stages {
+            stage ("Build") {
+                steps {
+                    echo "This is a build stage for ${VERSION_NUM}"
+                }
+            }
+
+            stage ("Test") {
+                steps {
+                    echo "This is a testing stage for ${VERSION_NUM}"
+                }
+            }
+
+            stage ("Deploy") {
+                steps {
+                    echo "This is a deploy stage for ${VERSION_NUM}"
+                }
+            }
+        }
+}
