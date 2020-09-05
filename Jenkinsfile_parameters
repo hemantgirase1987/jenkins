@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: Environment, choices['Dev','Stage','Perf','Preprod','Prod'])
+        booleanParam(name: executeTest, defaultValue: true, description: 'Check this to run the Test stage')
+    }
+        stages {
+            stage ("Build") {
+                steps {
+                    echo "This is a build stage from master branch"
+                }
+            }
+
+            stage ("Test") {
+                when {
+                    expression {
+                        params.executeTest == "true"
+                    }
+                }
+                steps {
+                    echo "This is a testing stage from dev branch"
+                }
+            }
+
+            stage ("Deploy") {
+                steps {
+                    echo "This is a deploy stage from master branch"
+                }
+            }
+        }
+}
