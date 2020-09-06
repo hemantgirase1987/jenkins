@@ -9,3 +9,5 @@ def testFunction() {
 def deployFunction() {
     echo "This is a deploy stage from master branch"
 }
+
+return this
