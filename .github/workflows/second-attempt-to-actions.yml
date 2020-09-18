@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: uname -a
-      - run: hostnsmr
+      - run: hostname
   check-current-pwd:
     runs-on: ubuntu-latest
     steps:
@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-node@v1
       - run: hostname
       - run: pwd
-      - run: whosmi
+      - run: whoami
       - run: echo $PATH
