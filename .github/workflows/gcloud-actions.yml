@@ -4,7 +4,7 @@ jobs:
   install-gcloud:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-gcloud@0.1.2
+      - uses: actions/setup-gcloud@v0.1.2
       - uses: actions/setup-node@v1
       - run: gcloud --help
       - run: gcloud config list
